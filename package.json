@@ -46,7 +46,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:docker": "dotenv -e .env.docker react-scripts start",
     "build": "react-scripts build",
+    "build:docker": "dotenv -e .env.docker react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",

@@ -1,7 +1,4 @@
-import { Helmet } from 'react-helmet-async';
-import PageTitleWrapper from '../../components/PageTitleWrapper';
-import PageHeader from './PageHeader';
-import React, { useEffect, useState } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
 import {
   Box,
   Button,
@@ -10,28 +7,24 @@ import {
   CardHeader,
   Container,
   Divider,
-  Grid,
-  MenuItem,
-  Select
+  Grid
 } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import DefaultSelect from '../../components/DefaultSelect';
+import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import * as yup from 'yup';
-import { Controller, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import CarService from '../../services/CarService';
-import CountriesService from '../../services/CountriesService';
-import ManufacturersService from '../../services/ManufacturersService';
-import ColorsService from '../../services/ColorsService';
 import { useParams } from 'react-router';
 import { Car } from 'src/models/car';
+import * as yup from 'yup';
 import DefaultController from '../../components/DefaultController';
+import PageTitleWrapper from '../../components/PageTitleWrapper';
+import CarService from '../../services/CarService';
+import ColorsService from '../../services/ColorsService';
+import CountriesService from '../../services/CountriesService';
+import ManufacturersService from '../../services/ManufacturersService';
+import PageHeader from './PageHeader';
 
-// interface TypePayload {
-//   id: number;
-//   name: string;
-// }
 
 const CarFormValidation:React.FC = () => {
 
