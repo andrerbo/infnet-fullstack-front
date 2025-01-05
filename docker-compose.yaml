@@ -1,0 +1,18 @@
+services: 
+  frontend:
+    image: "andrerbo/infnet-fullstack-front:v-1.1-docker"
+    container_name: "infnet-fullstack-front"
+    depends_on:
+      - backend
+    ports:
+      - 9000:80
+
+  backend:
+    image: "andrerbo/infnet-fullstack-api:v-1.1-final"
+    container_name: "infnet-fullstack-api"
+    ports:
+      - 8081:8080
+
+networks:
+  infnet-network:
+    driver: bridge
